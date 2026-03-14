@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureVerify | AI-Powered Document Verification</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navigation Header -->
+<header class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">
+      <i class="fas fa-shield-alt"></i>
+      <span>SecureVerify</span>
+    </div>
+    <nav class="navbar-menu">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#verify" class="nav-link">Verify</a>
+      <a href="#verified" class="nav-link">Results</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Secure & Smart Document Verification</h1>
+    <p class="hero-subtitle">Enterprise-grade AI verification for IDs and certificates — fast, secure, and industry-grade accuracy.</p>
+    <div class="hero-cta">
+      <a href="#verify" class="btn btn-primary btn-lg">
+        <i class="fas fa-check-circle"></i> Start Verification
+      </a>
+        <a href="#about" class="btn btn-secondary btn-lg">
+        <i class="fas fa-info-circle"></i> Learn More
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Document Verification Section -->
+<section id="verify" class="verify-section">
+  <div class="section-container">
+    <h2 class="section-title">Verify Your Documents</h2>
+    <p class="section-subtitle">Upload and verify your identity documents or certificates in seconds</p>
+
+    <div class="verify-container">
+      <div class="document-types">
+        <h3>Select Document Type</h3>
+        <div class="type-grid">
+          <button class="type-btn" onclick="selectType('Aadhar')">
+            <i class="fas fa-id-card"></i>
+            <span>Aadhar Card</span>
+          </button>
+          <button class="type-btn" onclick="selectType('Passport')">
+            <i class="fas fa-passport"></i>
+            <span>Passport</span>
+          </button>
+          <button class="type-btn" onclick="selectType('Driving License')">
+            <i class="fas fa-car"></i>
+            <span>Driving License</span>
+          </button>
+          <button class="type-btn" onclick="selectType('Certificate')">
+            <i class="fas fa-certificate"></i>
+            <span>Certificate</span>
+          </button>
+        </div>
+      </div>
+
+      <form id="uploadForm" class="verification-form">
+        <!-- User Information Section -->
+        <fieldset class="form-section">
+          <legend>Your Information</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Full Name <span class="required">*</span></label>
+              <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="fatherName">Father's Name <span class="required">*</span></label>
+              <input type="text" id="fatherName" placeholder="Enter father's name" required>
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth <span class="required">*</span></label>
+              <input type="date" id="dob" required>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender <span class="required">*</span></label>
+              <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="country">Country <span class="required">*</span></label>
+              <input type="text" id="country" placeholder="Enter your country" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+          </div>
+
+          <!-- Optional Fields -->
+          <div id="percentageField" class="form-group" style="margin-top: 15px;">
+            <label for="percentage">10th Grade Percentage (Optional)</label>
+            <input type="number" id="percentage" placeholder="Enter percentage (0-100)" min="0" max="100">
+            <small>Required only for academic certificates</small>
+          </div>
+
+          <div id="aadharField" style="display: none; margin-top: 15px;">
+            <div class="form-group">
+              <label for="aadharNumber">Aadhar Number <span class="required">*</span></label>
+              <input type="text" id="aadharNumber" placeholder="Enter 12-digit Aadhar number" pattern="\d{12}" maxlength="12">
+              <small>12-digit number for verification</small>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Document Upload Section -->
+        <fieldset class="form-section">
+          <legend>Upload Document</legend>
+          <div class="upload-container">
+            <div class="upload-box" id="uploadBox">
+              <div class="upload-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+              </div>
+              <h4>Drag and drop your document here</h4>
+              <p>or click to browse files</p>
+              <p class="upload-formats">Supported: PDF, JPG, PNG (Max 10MB)</p>
+              <input type="file" id="document" accept=".jpg,.jpeg,.png,.pdf,.txt" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Action Buttons -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-lg">
+            <i class="fas fa-shield-check"></i> Verify Document
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">
+            <i class="fas fa-redo"></i> Reset Form
+          </button>
+        </div>
+
+        <!-- Preview and Status -->
+        <div id="preview" class="preview-section"></div>
+        <div id="status" class="status-message"></div>
+
+        <!-- Auto-Fill Section -->
+        <div id="autoFillSection" style="display: none;" class="auto-fill-box">
+          <h4><i class="fas fa-magic"></i> Extracted Information</h4>
+          <p>Click the button below to auto-fill the form with extracted data:</p>
+          <div id="extractedPreview" class="extracted-preview"></div>
+          <button type="button" id="autoFillBtn" class="btn btn-success">
+            <i class="fas fa-fill-drip"></i> Auto Fill Form
+          </button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" style="display: none;" class="results-section">
+          <h3><i class="fas fa-check-double"></i> Verification Results</h3>
+          <div id="chart" class="chart-container"></div>
+          <div id="extracted-info" class="extracted-info-box"></div>
+          <button id="downloadCsv" class="btn btn-info">
+            <i class="fas fa-download"></i> Download Report
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="section-container">
+    <h2 class="section-title">Why Choose SecureVerify?</h2>
+    <p class="section-subtitle">Industry-leading document verification with enterprise-grade security</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3>Advanced OCR Technology</h3>
+        <p>State-of-the-art Tesseract OCR engine with 95%+ accuracy for text extraction from documents</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>AI-Powered Analysis</h3>
+        <p>BERT-based Named Entity Recognition for intelligent name and data extraction</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-file-pdf"></i>
+        </div>
+        <h3>Multi-Format Support</h3>
+        <p>Support for PDF, Images, and text documents with intelligent preprocessing</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <h3>Secure Processing</h3>
+        <p>Enterprise-grade security with encrypted processing and secure storage</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h3>Real-Time Analytics</h3>
+        <p>Detailed verification reports with accuracy scores and visual analytics</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h3>Multi-Language</h3>
+        <p>Support for English, Odia, and other languages for regional documents</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- System Status Section -->
+<section class="status-section" id="status">
+  <div class="section-container">
+    <h2 class="section-title">System Status</h2>
+    <p class="section-subtitle">All services operating at peak performance</p>
+    
+    <div class="status-grid">
+      <div class="status-card status-active">
+        <div class="status-indicator"></div>
+        <h3>OCR Engine</h3>
+        <p class="status-badge">Active</p>
+      </div>
+      <div class="status-card status-active">
+        <div class="status-indicator"></div>
+        <h3>NER Model</h3>
+        <p class="status-badge">Active</p>
+      </div>
+      <div class="status-card status-active">
+        <div class="status-indicator"></div>
+        <h3>PDF Processor</h3>
+        <p class="status-badge">Active</p>
+      </div>
+      <div class="status-card status-active">
+        <div class="status-indicator"></div>
+        <h3>Verification API</h3>
+        <p class="status-badge">Active</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Verified Documents Section -->
+<section id="verified" class="verified-section">
+  <div class="section-container">
+    <h2 class="section-title">Verification Results</h2>
+    <p class="section-subtitle">Browse all verified documents and their accuracy metrics</p>
+    
+    <div class="verified-controls">
+      <button id="refreshVerified" class="btn btn-primary">
+        <i class="fas fa-sync-alt"></i> Refresh Results
+      </button>
+    </div>
+    
+    <div id="verified-list" class="verified-list">
+      <p class="loading-message">Loading verification results...</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="section-container">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtitle">Have questions? We're here to help</p>
+    
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p><a href="mailto:support@secureverify.com">support@secureverify.com</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Address</h3>
+        <p>Tech Innovation Hub<br>New Delhi, India</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>SecureVerify</h4>
+      <p>Enterprise-grade AI-powered document verification platform</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#verify">Verify</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Security</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 SecureVerify. All rights reserved. | Enterprise Document Verification Solutions</p>
+    <p class="footer-links">Privacy Policy | Terms</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

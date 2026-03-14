@@ -1,0 +1,28 @@
+GOVERNMENT OF INDIA
+UNIQUE IDENTIFICATION AUTHORITY OF INDIA
+
+AADHAR CARD
+
+Name: Satyajit Dutta
+Father's Name: Rajesh Kumar Dutta
+Date of Birth: 15/08/1990
+Gender: Male
+Aadhar Number: 1234 5678 9012
+
+Address:
+123 MG Road
+Bangalore, Karnataka - 560001
+
+Mobile: +91-9876543210
+Email: satyajit.dutta@email.com
+
+Issue Date: 20/02/2020
+Valid Till: Permanent
+
+Signature: ____________________
+
+Photo: [Digital Photo Attached]
+
+VID: 1234567890123456
+
+Help Line: 1947

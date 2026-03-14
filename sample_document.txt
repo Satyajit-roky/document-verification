@@ -1,0 +1,5 @@
+Student Name: John Smith
+Father's Name: Robert Smith
+Percentage: 85.5%
+Grade: A
+This is a sample student certificate.

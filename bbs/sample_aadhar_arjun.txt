@@ -1,0 +1,28 @@
+GOVERNMENT OF INDIA
+UNIQUE IDENTIFICATION AUTHORITY OF INDIA
+
+AADHAR CARD
+
+Name: Arjun Kumar Singh
+Father's Name: Rajendra Singh
+Date of Birth: 10/12/1992
+Gender: Male
+Aadhar Number: 1111 2222 3333
+
+Address:
+789 Sunset Avenue
+Mumbai, Maharashtra - 400001
+
+Mobile: +91-8765432109
+Email: arjun.singh@email.com
+
+Issue Date: 08/06/2020
+Valid Till: Permanent
+
+Signature: ____________________
+
+Photo: [Digital Photo Attached]
+
+VID: 5432109876543210
+
+Help Line: 1947

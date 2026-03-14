@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -205,3 +206,48 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+=======
+# Ignored files and folders
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.db
+*.db-journal
+*.DS_Store
+*.egg-info/
+*.egg
+*.zip
+*.exe
+*.msi
+*.tar.gz
+*.tgz
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# System
+Thumbs.db
+desktop.ini
+
+# Node/Python dist
+node_modules/
+.env
+
+# Large generated or downloaded binaries
+poppler/
+poppler.zip
+Tesseract-OCR/
+
+# OneDrive and user directories (in case workspace is in OneDrive)
+**/AppData/
+**/Desktop.ini
+
+# Temporary
+*.tmp
+*.temp
+>>>>>>> c882415 (Initial project import with document verification system)

@@ -1,0 +1,164 @@
+{
+  "document_type": "Academic Certificate",
+  "extracted_details": {
+    "aadhar_number": null,
+    "addresses": [
+      "Father's Name: Robert Smith Percentage: 85.5% Grade: A",
+      "This is a sample student certificate."
+    ],
+    "dates": [],
+    "document_numbers": [],
+    "document_type": "Academic Certificate",
+    "father_names": [
+      "Robert Smith"
+    ],
+    "grades": [],
+    "issuing_authority": null,
+    "mobile_numbers": [],
+    "mother_names": [],
+    "names": [
+      "Name",
+      "John Smith Father",
+      "Robert Smith",
+      "Grade",
+      "John Smith"
+    ],
+    "numbers": [],
+    "percentages": [
+      85.5,
+      85.5,
+      85.5
+    ]
+  },
+  "extracted_text": "Student Name: John Smith\r\nFather's Name: Robert Smith\r\nPercentage: 85.5%\r\nGrade: A\r\nThis is a sample student certificate.",
+  "match": true,
+  "overall_score": 100.0,
+  "qr_code": "data:image/png;base64,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",
+  "recommendations": {
+    "father_name": null,
+    "name": null,
+    "percentage": null
+  },
+  "status": "Verified",
+  "verification_data": {
+    "document_type": "Academic Certificate",
+    "extracted_details": {
+      "aadhar_number": null,
+      "addresses": [
+        "Father's Name: Robert Smith Percentage: 85.5% Grade: A",
+        "This is a sample student certificate."
+      ],
+      "dates": [],
+      "document_numbers": [],
+      "document_type": "Academic Certificate",
+      "father_names": [
+        "Robert Smith"
+      ],
+      "grades": [],
+      "issuing_authority": null,
+      "mobile_numbers": [],
+      "mother_names": [],
+      "names": [
+        "Name",
+        "John Smith Father",
+        "Robert Smith",
+        "Grade",
+        "John Smith"
+      ],
+      "numbers": [],
+      "percentages": [
+        85.5,
+        85.5,
+        85.5
+      ]
+    },
+    "overall_match": true,
+    "timestamp": "2026-02-18 20:18:22",
+    "user_details": {
+      "father_name": "Robert Smith",
+      "name": "John Smith",
+      "percentage": 85.5
+    },
+    "verification_results": {
+      "father_name": {
+        "extracted": [
+          "Robert Smith",
+          "Name",
+          "John Smith Father",
+          "Robert Smith",
+          "Grade",
+          "John Smith"
+        ],
+        "match_score": 100,
+        "matched_value": "Robert Smith",
+        "status": "Match",
+        "user_provided": "Robert Smith"
+      },
+      "name": {
+        "extracted": [
+          "Name",
+          "John Smith Father",
+          "Robert Smith",
+          "Grade",
+          "John Smith"
+        ],
+        "match_score": 100,
+        "matched_value": "John Smith",
+        "status": "Match",
+        "user_provided": "John Smith"
+      },
+      "percentage": {
+        "extracted": [
+          85.5,
+          85.5,
+          85.5
+        ],
+        "match_score": 100,
+        "matched_value": "85.5",
+        "status": "Match",
+        "user_provided": 85.5
+      }
+    },
+    "verification_status": "Verified"
+  },
+  "verification_results": {
+    "father_name": {
+      "extracted": [
+        "Robert Smith",
+        "Name",
+        "John Smith Father",
+        "Robert Smith",
+        "Grade",
+        "John Smith"
+      ],
+      "match_score": 100,
+      "matched_value": "Robert Smith",
+      "status": "Match",
+      "user_provided": "Robert Smith"
+    },
+    "name": {
+      "extracted": [
+        "Name",
+        "John Smith Father",
+        "Robert Smith",
+        "Grade",
+        "John Smith"
+      ],
+      "match_score": 100,
+      "matched_value": "John Smith",
+      "status": "Match",
+      "user_provided": "John Smith"
+    },
+    "percentage": {
+      "extracted": [
+        85.5,
+        85.5,
+        85.5
+      ],
+      "match_score": 100,
+      "matched_value": "85.5",
+      "status": "Match",
+      "user_provided": 85.5
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - AI Document Verification</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="login-header">
+    <h2><i class="fas fa-shield-alt"></i> AI-Driven Document Verification</h2>
+    <p class="muted">Fast • Secure • Enterprise-grade verification</p>
+  </div>
+</header>
+
+<section class="login-section">
+  <div class="login-card">
+    <div class="login-brand">
+      <i class="fas fa-shield-alt"></i>
+      <h3>SecureVerify</h3>
+      <p class="muted">Enterprise Document Verification</p>
+    </div>
+
+    <h2 class="login-title">Welcome back</h2>
+    <p class="login-sub">Login to access your verification dashboard</p>
+
+    <form id="loginForm" class="login-form">
+      <div class="input-row">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@company.com" required>
+      </div>
+      <div class="input-row">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+
+      <div class="login-actions">
+        <label class="remember"><input type="checkbox" id="remember"> Remember me</label>
+        <a href="#" class="forgot">Forgot?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary login-btn">Sign in</button>
+    </form>
+
+    <div class="login-footer">
+      <p>Don't have an account? <a href="/register">Create one</a></p>
+    </div>
+
+    <div id="loginMessage" class="login-message"></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 AI Document Verification System</p>
+  <a href="#" onclick="alert('Privacy Policy - Coming Soon!')">Privacy Policy</a> |
+  <a href="#" onclick="alert('Terms of Service - Coming Soon!')">Terms</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

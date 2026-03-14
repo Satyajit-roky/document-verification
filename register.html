@@ -1,0 +1,309 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - AI Document Verification</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h2>AI-Driven Document Verification</h2>
+</header>
+
+<section class="register-section">
+  <h2>Create Your Account</h2>
+  <form id="registerForm">
+    <input type="text" id="fullName" placeholder="Full Name" required>
+    <input type="email" id="regEmail" placeholder="Email" required>
+    <input type="password" id="regPassword" placeholder="Password (min 6 chars)" minlength="6" required>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" minlength="6" required>
+    <button type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a href="/login">Login here</a></p>
+  <div id="registerMessage"></div>
+</section>
+
+<footer>
+  <p>© 2026 AI Document Verification System</p>
+  <a href="#" onclick="alert('Privacy Policy - Coming Soon!')">Privacy Policy</a> |
+  <a href="#" onclick="alert('Terms of Service - Coming Soon!')">Terms</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - AI Document Verification</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  height:100vh;
+  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c92d2);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display:flex;
+  flex-direction:column;
+  color:white;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+header{
+  text-align:center;
+  padding:20px;
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.register-section{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  padding:40px;
+  width:380px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.card h2{
+  text-align:center;
+  margin-bottom:30px;
+  font-weight:600;
+}
+
+.input-box{
+  position:relative;
+  margin-bottom:25px;
+}
+
+.input-box input{
+  width:100%;
+  padding:14px 40px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  background:rgba(255,255,255,0.2);
+  color:white;
+  font-size:14px;
+}
+
+.input-box label{
+  position:absolute;
+  left:40px;
+  top:14px;
+  font-size:14px;
+  color:#ddd;
+  pointer-events:none;
+  transition:0.3s;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label{
+  top:-8px;
+  left:35px;
+  font-size:12px;
+  background:#203a43;
+  padding:2px 6px;
+  border-radius:4px;
+}
+
+.input-box i{
+  position:absolute;
+  top:14px;
+  left:12px;
+  color:#00f2fe;
+}
+
+.toggle-password{
+  position:absolute;
+  right:12px;
+  top:14px;
+  cursor:pointer;
+  color:#ccc;
+}
+
+.strength{
+  height:5px;
+  border-radius:5px;
+  margin-top:-15px;
+  margin-bottom:15px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(45deg,#00f2fe,#4facfe);
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+.link{
+  text-align:center;
+  margin-top:20px;
+}
+
+.link a{
+  color:#00f2fe;
+  text-decoration:none;
+}
+
+.link a:hover{
+  text-decoration:underline;
+}
+
+.message{
+  text-align:center;
+  margin-top:15px;
+  font-size:14px;
+}
+
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+  background:rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <i class="fa-solid fa-shield-halved"></i> AI-Driven Document Verification
+</header>
+
+<section class="register-section">
+  <div class="card">
+    <h2>Create Account</h2>
+
+    <form id="registerForm">
+
+      <div class="input-box">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="name" placeholder=" " required>
+        <label>Full Name</label>
+      </div>
+
+      <div class="input-box">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" id="email" placeholder=" " required>
+        <label>Email Address</label>
+      </div>
+
+      <div class="input-box">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="password" placeholder=" " required>
+        <label>Password</label>
+        <i class="fa-solid fa-eye toggle-password" onclick="togglePassword()"></i>
+      </div>
+
+      <div class="strength" id="strengthBar"></div>
+
+      <div class="input-box">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="confirmPassword" placeholder=" " required>
+        <label>Confirm Password</label>
+      </div>
+
+      <button type="submit">Register</button>
+
+      <div class="message" id="message"></div>
+
+    </form>
+
+    <div class="link">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 AI Document Verification System | Secure • Fast • Reliable
+</footer>
+
+<script>
+const password = document.getElementById("password");
+const strengthBar = document.getElementById("strengthBar");
+
+password.addEventListener("input", function(){
+  const val = password.value;
+  let strength = 0;
+
+  if(val.length >= 6) strength++;
+  if(/[A-Z]/.test(val)) strength++;
+  if(/[0-9]/.test(val)) strength++;
+  if(/[@$!%*?&]/.test(val)) strength++;
+
+  const colors = ["red","orange","yellow","lime"];
+  strengthBar.style.width = (strength * 25) + "%";
+  strengthBar.style.background = colors[strength-1] || "transparent";
+});
+
+function togglePassword(){
+  const passField = document.getElementById("password");
+  passField.type = passField.type === "password" ? "text" : "password";
+}
+
+document.getElementById("registerForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const pass = document.getElementById("password").value;
+  const confirm = document.getElementById("confirmPassword").value;
+  const message = document.getElementById("message");
+
+  if(pass !== confirm){
+    message.innerHTML = "❌ Passwords do not match!";
+    message.style.color = "red";
+    return;
+  }
+
+  message.innerHTML = "✅ Registration Successful!";
+  message.style.color = "lightgreen";
+});
+</script>
+
+</body>
+</html>
